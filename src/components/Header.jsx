@@ -9,7 +9,7 @@ export default function Header() {
                 <Navbar />
             </div>
             <div className={`${styles.headerGroup} ${styles.headerTitle}`}>
-                <p className={styles.title}>Lumina</p>
+                <h1 className={styles.title}>Lumina</h1>
             </div>
             <div className={styles.headerGroup}>
                 <div className={styles.buttonWrapper}>

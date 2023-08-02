@@ -18,6 +18,7 @@
 
 .headerTitle {
     flex: 1;
+    align-self: center;
 }
 
 .title {

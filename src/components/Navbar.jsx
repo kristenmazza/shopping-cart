@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from './Navbar.module.css';
+import { Link } from "react-router-dom";
 
 function Navbar() {
     const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -24,8 +25,8 @@ function Navbar() {
             </button>
             <div className={`${styles.navigationMenu} ${expandedClassOption}`}>
                 <ul>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><Link to="/shop">Shop</Link></li>
+                    <li><Link to="/about">About</Link></li>
                 </ul>
             </div>
         </nav >
