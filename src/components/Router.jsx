@@ -12,14 +12,21 @@ const Router = () => {
             element: <App />,
             errorElement: <ErrorPage />,
             children: [
-                { index: true, element: <Home /> },
                 {
-                    path: "shop",
-                    element: <Shop />,
-                },
-                {
-                    path: "about",
-                    element: <About />,
+                    errorElement: <ErrorPage />,
+
+                    children: [
+                        { index: true, element: <Home /> },
+                        {
+                            path: "shop",
+                            element: <Shop />,
+                        },
+                        {
+                            path: "about",
+                            element: <About />,
+                        },
+                        { path: "*", element: <ErrorPage /> },
+                    ],
                 },
             ],
         },
