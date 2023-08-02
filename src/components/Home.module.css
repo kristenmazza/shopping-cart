@@ -1,6 +1,6 @@
 main {
     flex: 1 0 auto;
-    background-color: rgb(210, 210, 210);
+    background-color: rgb(248, 248, 248);
 }
 
 .splashImage {
@@ -66,4 +66,48 @@ main {
 .splashButton:focus {
     outline: 1px solid rgb(248, 248, 248);
     outline-offset: 2px;
+}
+
+.productDetails {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 60px;
+    color: rgb(52, 52, 52);
+    gap: 60px;
+}
+
+.productDetailsGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    max-width: 370px;
+}
+
+.productDetailsImg {
+    height: 100px;
+}
+
+.productDetailsTitle {
+    color: rgb(13, 13, 13);
+    text-align: center;
+    margin: 30px 0px;
+    line-height: 1;
+}
+
+.productDetailsGroup>p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .productDetails {
+        flex-direction: column;
+        gap: 40px;
+    }
+
 }
