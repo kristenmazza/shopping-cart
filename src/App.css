@@ -21,8 +21,3 @@ main {
   flex: 1 0 auto;
   background-color: rgb(210, 210, 210);
 }
-
-.footer {
-  flex-shrink: 0;
-  background-color: rgb(138, 0, 74);
-}
