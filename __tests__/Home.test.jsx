@@ -7,7 +7,7 @@ import { MemoryRouter } from "react-router-dom";
 describe("Home component", () => {
     it("renders correct heading", () => {
         render(<MemoryRouter><Home /></MemoryRouter>);
-        expect(screen.getByRole("heading").textContent).toMatch(/everydayessentials/i);
+        expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(/everydayessentials/i);
     });
 
     it("renders shop button", () => {
