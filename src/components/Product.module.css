@@ -1,0 +1,98 @@
+.productCard {
+    min-height: 350px;
+    max-width: 300px;
+    flex: 1 1 200px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productImage {
+    margin: 20px 20px 0px 20px;
+    height: 200px;
+    width: 200px;
+    background-color: rgb(197, 197, 197);
+}
+
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.name {
+    line-height: 0;
+}
+
+.productDetails>p {
+    line-height: 0;
+    padding-bottom: 15px;
+}
+
+.counter {
+    background-color: transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    flex: 1;
+}
+
+.sub,
+.add {
+    margin: 0px;
+    cursor: pointer;
+    background-color: white;
+    height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: rgb(116, 0, 61);
+}
+
+.sub {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.add {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+input {
+    text-align: center;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.addCartButton {
+    font-size: 15px;
+    padding: 5px 14px;
+    min-width: 130px;
+    background-color: rgb(255, 99, 0);
+    color: rgb(248, 248, 248);
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+    flex: 1;
+}
