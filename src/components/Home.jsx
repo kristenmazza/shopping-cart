@@ -1,6 +1,8 @@
-import styles from './Home.module.css'
+import styles from './Home.module.css';
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+    const navigate = useNavigate();
     return (
         <main>
             <div className={styles.splashImage}>
@@ -8,7 +10,7 @@ function Home() {
                     <p className={styles.titleSup}>The New</p>
                     <h1 className={styles.title}>Everyday<br />Essentials</h1>
                     <p className={styles.titleSup}>Collection</p>
-                    <button className={styles.splashButton}>Shop</button>
+                    <button className={styles.splashButton} onClick={() => navigate('/shop')}>Shop</button>
                 </div>
             </div>
             <div className={styles.productDetails}>

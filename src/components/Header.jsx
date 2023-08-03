@@ -1,5 +1,6 @@
 import styles from './Header.module.css';
 import Navbar from './Navbar';
+import { Link } from "react-router-dom";
 
 export default function Header() {
 
@@ -9,7 +10,7 @@ export default function Header() {
                 <Navbar />
             </div>
             <div className={`${styles.headerGroup} ${styles.headerTitle}`}>
-                <h1 className={styles.title}>Lumina</h1>
+                <h1 className={styles.title}><Link to="/">Lumina</Link></h1>
             </div>
             <div className={styles.headerGroup}>
                 <div className={styles.buttonWrapper}>

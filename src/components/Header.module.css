@@ -25,11 +25,16 @@
     align-self: center;
 }
 
-.title {
+.title>a {
     font-size: 40px;
     font-weight: 700;
     margin: 0;
     letter-spacing: .15rem;
+    color: rgb(116, 0, 61);
+}
+
+.title>a:hover {
+    color: rgb(147, 0, 79);
 }
 
 .buttonWrapper {

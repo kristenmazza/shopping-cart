@@ -6,6 +6,7 @@ import Home from "./Home";
 import ErrorPage from "./ErrorPage";
 
 const Router = () => {
+
     const router = createBrowserRouter([
         {
             path: "/",
