@@ -14,7 +14,8 @@ function ProductList() {
         const getItems = async () => {
             try {
                 const response = await axios.get('https://fakestoreapi.com/products');
-                setItems(response.data);
+                const newItems = response.data.map(item => ({ ...item, "quantity": 1 }))
+                setItems(newItems);
                 setError(null);
             } catch (err) {
                 setError(err.message);
@@ -29,11 +30,11 @@ function ProductList() {
     const productCards = items.map(item => {
         if (error) return <p>An error was encountered.</p>
         if (item.category === `men's clothing` || item.category === `women's clothing`) {
-            const { id, title, price, image } = item;
+            const { id, title, price, image, quantity } = item;
 
             return (
                 <React.Fragment key={id}>
-                    <Product title={title} price={price} image={image} />
+                    <Product items={items} title={title} price={price} image={image} quantity={quantity} id={id} setItems={setItems} />
                 </React.Fragment>
             )
         }
