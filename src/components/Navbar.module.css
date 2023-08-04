@@ -73,7 +73,7 @@
         left: -20px;
         flex-direction: column;
         width: 100vw;
-        background-color: rgb(242, 242, 242);
+        background-color: rgb(255, 255, 255);
         max-height: 0;
         transition: max-height 0.15s ease-out, visibility 0.15s;
         visibility: hidden;

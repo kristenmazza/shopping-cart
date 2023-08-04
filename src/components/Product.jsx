@@ -1,9 +1,7 @@
 import styles from "./Product.module.css";
 import { useState } from 'react';
 
-function Product({ items, title, price, image, quantity, id, setItems }) {
-    const [cart, setCart] = useState([]);
-
+function Product({ items, title, price, image, quantity, id, setItems, cart, setCart }) {
     const handleQuantityDecrease = () => {
         const currentProductIndex = items.findIndex((item) => item.id === id);
         quantity -= 1;

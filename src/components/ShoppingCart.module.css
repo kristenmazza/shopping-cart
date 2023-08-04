@@ -1,0 +1,5 @@
+.cartContainer {
+    flex: 1 0 auto;
+    background-color: rgb(241, 241, 241);
+    padding: 40px 80px;
+}

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import React from 'react';
 import { ThreeDots } from 'react-loader-spinner';
 
-function ProductList() {
+function ProductList({ cart, setCart }) {
     const [items, setItems] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -34,7 +34,7 @@ function ProductList() {
 
             return (
                 <React.Fragment key={id}>
-                    <Product items={items} title={title} price={price} image={image} quantity={quantity} id={id} setItems={setItems} />
+                    <Product cart={cart} setCart={setCart} items={items} title={title} price={price} image={image} quantity={quantity} id={id} setItems={setItems} />
                 </React.Fragment>
             )
         }
