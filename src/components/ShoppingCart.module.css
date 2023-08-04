@@ -3,3 +3,29 @@
     background-color: rgb(241, 241, 241);
     padding: 40px 80px;
 }
+
+.heading {
+    font-size: 18px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.orderSummary {
+    background-color: rgb(255, 255, 255);
+    max-width: 500px;
+    height: 100px;
+    flex: 1;
+    border-radius: 10px;
+}

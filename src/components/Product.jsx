@@ -1,11 +1,13 @@
 import styles from "./Product.module.css";
-import { useState } from 'react';
 
 function Product({ items, title, price, image, quantity, id, setItems, cart, setCart }) {
     const handleQuantityDecrease = () => {
         const currentProductIndex = items.findIndex((item) => item.id === id);
-        quantity -= 1;
-
+        if (quantity <= 1) {
+            quantity = 1;
+        } else {
+            quantity -= 1;
+        }
         const updatedProduct = { ...items[currentProductIndex], "quantity": quantity };
         const updatedItems = [...items.slice(0, currentProductIndex), updatedProduct, ...items.slice(currentProductIndex + 1)];
         setItems(updatedItems);
@@ -37,7 +39,7 @@ function Product({ items, title, price, image, quantity, id, setItems, cart, set
                     "quantity": quantity + cartItem.quantity
                 }
             }
-            return item;
+            return cartItem;
         })
 
         if (!exists) {
