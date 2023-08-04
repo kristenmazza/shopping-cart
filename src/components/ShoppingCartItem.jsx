@@ -1,6 +1,9 @@
 import styles from "./ShoppingCartItem.module.css";
+import { useContext } from "react";
+import { GlobalContext } from "../App";
 
 export default function ShoppingCartItem({ cart, setCart, title, price, image, quantity, id }) {
+    const { setCartQuantity } = useContext(GlobalContext);
 
     const handleCartQuantityDecrease = () => {
         const currentCartIndex = cart.findIndex((item) => item.id === id);
@@ -13,7 +16,7 @@ export default function ShoppingCartItem({ cart, setCart, title, price, image, q
         const updatedProduct = { ...cart[currentCartIndex], "quantity": quantity };
         const updatedItems = [...cart.slice(0, currentCartIndex), updatedProduct, ...cart.slice(currentCartIndex + 1)];
         setCart(updatedItems);
-        console.log(updatedItems);
+        sumCartQuantity(updatedItems);
     }
 
     const handleCartQuantityIncrease = () => {
@@ -23,7 +26,7 @@ export default function ShoppingCartItem({ cart, setCart, title, price, image, q
         const updatedProduct = { ...cart[currentCartIndex], "quantity": quantity };
         const updatedItems = [...cart.slice(0, currentCartIndex), updatedProduct, ...cart.slice(currentCartIndex + 1)];
         setCart(updatedItems);
-        console.log(updatedItems);
+        sumCartQuantity(updatedItems);
     }
 
     const handleCartQuantityInputChange = (e) => {
@@ -31,14 +34,22 @@ export default function ShoppingCartItem({ cart, setCart, title, price, image, q
         const updatedProduct = { ...cart[currentCartIndex], "quantity": Number(e.target.value) };
         const updatedItems = [...cart.slice(0, currentCartIndex), updatedProduct, ...cart.slice(currentCartIndex + 1)];
         setCart(updatedItems);
-        console.log(updatedItems);
+        sumCartQuantity(updatedItems);
     }
 
     const handleDeleteCartItem = () => {
         const updatedCart = cart.filter(item => item.id !== id);
         setCart(updatedCart);
+        sumCartQuantity(updatedCart);
     }
 
+    const sumCartQuantity = (updatedItems) => {
+        let total = 0;
+        updatedItems.forEach(item => {
+            total += item.quantity;
+        })
+        setCartQuantity(total);
+    }
     return (
         <>
             <div className={styles.cartItemCard}>

@@ -1,6 +1,10 @@
 import styles from "./Product.module.css";
+import { useContext } from "react";
+import { GlobalContext } from "../App";
 
-function Product({ items, title, price, image, quantity, id, setItems, cart, setCart }) {
+function Product({ items, title, price, image, quantity, id, setItems }) {
+    const { cart, setCart, setCartQuantity } = useContext(GlobalContext);
+
     const handleQuantityDecrease = () => {
         const currentProductIndex = items.findIndex((item) => item.id === id);
         if (quantity <= 1) {
@@ -11,7 +15,6 @@ function Product({ items, title, price, image, quantity, id, setItems, cart, set
         const updatedProduct = { ...items[currentProductIndex], "quantity": quantity };
         const updatedItems = [...items.slice(0, currentProductIndex), updatedProduct, ...items.slice(currentProductIndex + 1)];
         setItems(updatedItems);
-        console.log(updatedItems);
     };
 
     const handleQuantityIncrease = () => {
@@ -22,6 +25,14 @@ function Product({ items, title, price, image, quantity, id, setItems, cart, set
         const updatedItems = [...items.slice(0, currentProductIndex), updatedProduct, ...items.slice(currentProductIndex + 1)];
         setItems(updatedItems);
     };
+
+    const sumCartQuantity = (updatedCart) => {
+        let total = 0;
+        updatedCart.forEach(item => {
+            total += item.quantity;
+        })
+        setCartQuantity(total);
+    }
 
     const handleAddToCart = () => {
         const currentProductIndex = items.findIndex((item) => item.id === id);
@@ -47,6 +58,7 @@ function Product({ items, title, price, image, quantity, id, setItems, cart, set
         }
 
         setCart(updatedCart);
+        sumCartQuantity(updatedCart);
     }
 
     const handleQuantityInputChange = (e) => {

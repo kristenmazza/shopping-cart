@@ -5,10 +5,8 @@ import About from "./About";
 import Home from "./Home";
 import ErrorPage from "./ErrorPage";
 import ShoppingCart from "./ShoppingCart";
-import { useState } from "react"
 
 const Router = () => {
-    const [cart, setCart] = useState([]);
 
     const router = createBrowserRouter([
         {
@@ -23,7 +21,7 @@ const Router = () => {
                         { index: true, element: <Home /> },
                         {
                             path: "shop",
-                            element: <Shop cart={cart} setCart={setCart} />,
+                            element: <Shop />,
                         },
                         {
                             path: "about",
@@ -31,7 +29,7 @@ const Router = () => {
                         },
                         {
                             path: "cart",
-                            element: <ShoppingCart cart={cart} setCart={setCart} />
+                            element: <ShoppingCart />
                         },
                         { path: "*", element: <ErrorPage /> },
                     ],
@@ -40,7 +38,9 @@ const Router = () => {
         },
     ]);
 
-    return <RouterProvider router={router} />;
+    return (
+        <RouterProvider router={router} />
+    );
 };
 
 export default Router;

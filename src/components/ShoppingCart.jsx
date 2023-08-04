@@ -2,9 +2,12 @@ import styles from "./ShoppingCart.module.css";
 import ShoppingCartItem from "./ShoppingCartItem";
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { GlobalContext } from "../App";
 
-export default function ShoppingCart({ cart, setCart }) {
+export default function ShoppingCart() {
     const navigate = useNavigate();
+    const { cart, setCart } = useContext(GlobalContext);
 
     if (cart.length >= 1) {
         const cartItems = cart.map(cartItem => {
