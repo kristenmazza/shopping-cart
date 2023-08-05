@@ -24,10 +24,6 @@ const Router = () => {
                             element: <Shop />,
                         },
                         {
-                            path: "about",
-                            element: <About />,
-                        },
-                        {
                             path: "cart",
                             element: <ShoppingCart />
                         },
