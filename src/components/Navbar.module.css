@@ -38,8 +38,13 @@
     transition: transform 0.3s ease;
 }
 
-.navigationMenu li a:hover::before {
+.navigationMenu li a:hover::before,
+.navigationMenu li a:focus::before {
     transform: scaleX(1);
+}
+
+.navigationMenu li a:focus {
+    outline: 0;
 }
 
 .hamburger {

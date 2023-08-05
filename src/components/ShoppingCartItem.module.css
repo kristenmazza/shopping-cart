@@ -1,6 +1,5 @@
 .cartItemCard {
     background-color: rgb(255, 255, 255);
-    /* max-width: 650px; */
     border-radius: 10px;
     padding: 30px;
     display: flex;
@@ -102,4 +101,18 @@ input {
 
 .removeButton:hover {
     color: rgb(72, 72, 72);
+}
+
+@media (max-width: 600px) {
+    .cartItemCard {
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .cartItemQuantityOptions {
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-end;
+    }
+
 }
