@@ -8,7 +8,7 @@ export default function ErrorPage() {
         <main id={styles.errorPage}>
             <h1>Oops!</h1>
             <p>Sorry, an unexpected error has occurred.</p>
-            <img className={styles.errorImg} src="/public/images/error.png" />
+            <img className={styles.errorImg} src="/images/error.png" />
             <p><i>
                 {
                     isRouteErrorResponse(error) ?
