@@ -15,17 +15,17 @@ function Home() {
             </div>
             <div className={styles.productDetails}>
                 <div className={styles.productDetailsGroup}>
-                    <img className={styles.productDetailsImg} src="/public/images/Sustainability_300x.png" />
+                    <img className={styles.productDetailsImg} src="/images/Sustainability_300x.png" />
                     <h2 className={styles.productDetailsTitle}>High Sustainability</h2>
                     <p>All our products adhere to the highest sustainability standards, as every item is crafted using at least 80% sustainable fibers or fabrics.</p>
                 </div>
                 <div className={styles.productDetailsGroup}>
-                    <img className={styles.productDetailsImg} src="/public/images/planet_300x.png" />
+                    <img className={styles.productDetailsImg} src="/images/planet_300x.png" />
                     <h2 className={styles.productDetailsTitle}>Your Purchase Gives Back</h2>
                     <p>We proudly donate 1% of our sales to non-profit organizations that strive to create a positive impact on the world.</p>
                 </div>
                 <div className={styles.productDetailsGroup}>
-                    <img className={styles.productDetailsImg} src="/public/images/JoyBackGuarantee_300x.png" />
+                    <img className={styles.productDetailsImg} src="/images/JoyBackGuarantee_300x.png" />
                     <h2 className={styles.productDetailsTitle}>Joy Backed Guarantee</h2>
                     <p>If your Lumina products fail to bring you joy, we'll take the necessary steps to ensure your satisfaction.</p>
                 </div>

@@ -63,7 +63,7 @@ export default function ShoppingCart() {
                 <div className={styles.emptyCart}>
                     <h2>Your cart is empty</h2>
                     <p>Add some items to your cart and let the fun begin.</p>
-                    <img className={styles.cartImg} alt="Shopping cart" src="/public/images/cart.png" />
+                    <img className={styles.cartImg} alt="Shopping cart" src="/images/cart.png" />
                     <button className={styles.shopButton} onClick={() => navigate('/shop')}>Start Shopping</button>
                 </div>
             </main>
