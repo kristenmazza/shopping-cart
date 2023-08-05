@@ -4,10 +4,11 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { GlobalContext } from "../App";
+import { Link } from "react-router-dom";
 
 export default function ShoppingCart() {
     const navigate = useNavigate();
-    const { cart, setCart } = useContext(GlobalContext);
+    const { cart, setCart, total } = useContext(GlobalContext);
 
     if (cart.length >= 1) {
         const cartItems = cart.map(cartItem => {
@@ -36,7 +37,22 @@ export default function ShoppingCart() {
                         {cartItems}
                     </div>
                     <div className={styles.orderSummary}>
-                        <button>Checkout</button>
+                        <h3>Order Summary</h3>
+                        <div className={styles.row}>
+                            <p className={styles.shippingCost}>Shipping Cost</p>
+                            <p>$10.00</p>
+                        </div>
+                        <div className={styles.row}>
+                            <p className={styles.shippingDiscount}>Shipping Discount</p>
+                            <p className={styles.shippingDiscount}>-$10.00</p>
+                        </div>
+                        <div className={styles.line}></div>
+                        <div className={styles.row}>
+                            <p className={styles.total}>Estimated Total</p>
+                            <p className={styles.total}>${total.toFixed(2)}</p>                        </div>
+
+                        <button className={styles.checkoutButton}>Checkout</button>
+                        <Link to="/shop">CONTINUE SHOPPING</Link>
                     </div>
                 </div>
             </main >

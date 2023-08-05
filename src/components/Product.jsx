@@ -3,7 +3,15 @@ import { useContext } from "react";
 import { GlobalContext } from "../App";
 
 function Product({ items, title, price, image, quantity, id, setItems }) {
-    const { cart, setCart, setCartQuantity } = useContext(GlobalContext);
+    const { cart, setCart, setCartQuantity, total, setTotal } = useContext(GlobalContext);
+
+    const updateTotal = (updatedCart) => {
+        let total = 0;
+        updatedCart.forEach(item => {
+            total += (item.price * item.quantity);
+        })
+        setTotal(total);
+    }
 
     const handleQuantityDecrease = () => {
         const currentProductIndex = items.findIndex((item) => item.id === id);
@@ -59,6 +67,7 @@ function Product({ items, title, price, image, quantity, id, setItems }) {
 
         setCart(updatedCart);
         sumCartQuantity(updatedCart);
+        updateTotal(updatedCart);
     }
 
     const handleQuantityInputChange = (e) => {
@@ -73,7 +82,7 @@ function Product({ items, title, price, image, quantity, id, setItems }) {
             <img className={styles.productImage} src={image} />
             <div className={styles.productDetails}>
                 <h2 className={styles.name}>{title}</h2>
-                <p>${price}</p>
+                <p>${price.toFixed(2)}</p>
             </div >
             <div className={styles.row}>
                 <div className={styles.counter}>
