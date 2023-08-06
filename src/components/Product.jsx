@@ -90,7 +90,7 @@ function Product({ items, title, price, image, quantity, id, setItems }) {
                     <input type="text" id="1" min="0" value={quantity || "1"} onChange={(e) => handleQuantityInputChange(e)} className={styles.field} />
                     <button type="button" id="add" className={styles.add} onClick={() => handleQuantityIncrease()}>+</button>
                 </div >
-                <button className={styles.addCartButton} onClick={() => handleAddToCart()}>Add to Cart</button>
+                <button className={styles.addCartButton} area-label="add to cart" onClick={() => handleAddToCart()}>Add to Cart</button>
             </div>
         </div >
     )

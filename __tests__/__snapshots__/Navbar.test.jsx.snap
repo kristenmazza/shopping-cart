@@ -27,18 +27,18 @@ exports[`Navbar component > will create a snapshot 1`] = `
     <ul>
       <li>
         <a
-          href="/shop"
+          href="/"
           onClick={[Function]}
         >
-          Shop
+          Home
         </a>
       </li>
       <li>
         <a
-          href="/about"
+          href="/shop"
           onClick={[Function]}
         >
-          About
+          Shop
         </a>
       </li>
     </ul>
