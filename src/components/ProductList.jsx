@@ -13,6 +13,7 @@ function ProductList() {
     useEffect(() => {
         const getItems = async () => {
             try {
+                // This is a free, public API that displays fake products
                 const response = await axios.get('https://fakestoreapi.com/products');
                 const newItems = response.data.map(item => ({ ...item, "quantity": 1 }))
                 setItems(newItems);
