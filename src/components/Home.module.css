@@ -110,4 +110,11 @@ main {
         gap: 40px;
     }
 
+    .title {
+        font-size: 2rem;
+    }
+
+    .titleSup {
+        font-size: 1rem;
+    }
 }
