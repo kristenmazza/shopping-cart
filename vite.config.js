@@ -8,5 +8,10 @@ export default defineConfig({
       globals: true,
       environment: 'jsdom',
       setupFiles: './__tests__/setup.js',
+      css: {
+        modules: {
+          classNameStrategy: 'non-scoped',
+        },
+      }
   },
 })
