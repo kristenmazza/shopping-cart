@@ -15,7 +15,7 @@ function Home() {
             </div>
             <div className={styles.productDetails}>
                 <div className={styles.productDetailsGroup}>
-                    <img className={styles.productDetailsImg} src="/images/Sustainability_300x.png" />
+                    <img className={styles.productDetailsImg} src="/images/fields.png" />
                     <h2 className={styles.productDetailsTitle}>High Sustainability</h2>
                     <p>All our products adhere to the highest sustainability standards, as every item is crafted using at least 80% sustainable fibers or fabrics.</p>
                 </div>
@@ -25,9 +25,9 @@ function Home() {
                     <p>We proudly donate 1% of our sales to non-profit organizations that strive to create a positive impact on the world.</p>
                 </div>
                 <div className={styles.productDetailsGroup}>
-                    <img className={styles.productDetailsImg} src="/images/JoyBackGuarantee_300x.png" />
-                    <h2 className={styles.productDetailsTitle}>Joy Backed Guarantee</h2>
-                    <p>If your Lumina products fail to bring you joy, we'll take the necessary steps to ensure your satisfaction.</p>
+                    <img className={styles.productDetailsImg} src="/images/happiness.png" />
+                    <h2 className={styles.productDetailsTitle}>Happiness Backed Guarantee</h2>
+                    <p>If your Lumina products fail to bring you happiness, we'll take the necessary steps to ensure your satisfaction.</p>
                 </div>
             </div>
         </main>
