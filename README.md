@@ -3,6 +3,8 @@ Lumina serves as a prototype for an online store specializing in everyday clothi
 
 ![Shopping Cart Screenshots](public/images/cart-screenshots.png)
 
+![Gif demo](public/images/shopping-cart-demo.gif)
+
 [Live Demo](https://kristenmazza-shopping-cart.netlify.app/) :point_left:
 
 ## Learning Objectives
