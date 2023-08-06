@@ -75,11 +75,11 @@ export default function ShoppingCartItem({ cart, setCart, title, price, image, q
                     <p className={styles.price}>${price.toFixed(2)}</p>
                     <div className={styles.cartItemQuantityOptions}>
                         <div className={styles.counter}>
-                            <button type="button" id="sub" className={styles.sub} onClick={() => handleCartQuantityDecrease()}>-</button>
+                            <button type="button" id="sub" aria-label="subtract one" className={styles.sub} onClick={() => handleCartQuantityDecrease()}>-</button>
                             <input type="text" id="1" min="0" value={quantity || "1"} onChange={(e) => handleCartQuantityInputChange(e)} className={styles.field} />
-                            <button type="button" id="add" className={styles.add} onClick={() => handleCartQuantityIncrease()}>+</button>
+                            <button type="button" id="add" aria-label="add one" className={styles.add} onClick={() => handleCartQuantityIncrease()}>+</button>
                         </div >
-                        <button className={styles.removeButton} onClick={() => handleDeleteCartItem()}>REMOVE</button>
+                        <button className={styles.removeButton} aria-label="remove" onClick={() => handleDeleteCartItem()}>REMOVE</button>
 
                     </div>
                 </div>

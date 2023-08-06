@@ -5,14 +5,6 @@ import { describe, it, expect, vi } from 'vitest';
 import axios from 'axios'
 import { MemoryRouter } from "react-router-dom";
 
-// Actual API 
-// describe("Product list component", () => {
-//     it('should fetch and display data', async () => {
-//         const { findByText } = render(<ProductList />);
-//         expect(await findByText('Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops')).toBeInTheDocument();
-//     })
-// });
-
 describe("Product List component", () => {
     it('makes a GET request to fetch product data', async () => {
         vi.mock('axios');
@@ -54,7 +46,7 @@ describe("Product List component", () => {
 })
 
 describe('Product display', () => {
-    it("tests presence of add to cart button", async () => {
+    it("renders add to cart button", async () => {
         vi.mock('axios');
 
         const productMock = [
@@ -79,5 +71,169 @@ describe('Product display', () => {
         render(<MemoryRouter> <ProductList /></MemoryRouter >);
         await screen.findByRole('button', { name: /add to cart/i })
         expect(screen.getByRole('button', { name: /add to cart/i }).textContent).toMatch(/add to cart/i);
+    })
+
+    it("renders input field", async () => {
+        vi.mock('axios');
+
+        const productMock = [
+            {
+                "id": 1,
+                "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+                "price": 109.95,
+                "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+                "category": "men's clothing",
+                "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+                "rating": {
+                    "rate": 3.9,
+                    "count": 120
+                }
+            }
+        ];
+
+        axios.get.mockResolvedValue({
+            data: productMock,
+        })
+
+        render(<MemoryRouter> <ProductList /></MemoryRouter >);
+        await screen.findByRole('textbox')
+        expect(screen.getByRole('textbox').value).toMatch('1');
+    })
+
+    it("renders decrement button", async () => {
+        vi.mock('axios');
+
+        const productMock = [
+            {
+                "id": 1,
+                "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+                "price": 109.95,
+                "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+                "category": "men's clothing",
+                "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+                "rating": {
+                    "rate": 3.9,
+                    "count": 120
+                }
+            }
+        ];
+
+        axios.get.mockResolvedValue({
+            data: productMock,
+        })
+
+        render(<MemoryRouter> <ProductList /></MemoryRouter >);
+        await screen.findByRole('button', { name: /subtract one/i })
+        const subtractButton = screen.getByRole('button', { name: /subtract one/i });
+        expect(subtractButton).toBeInTheDocument();
+    })
+
+    it("renders increment button", async () => {
+        vi.mock('axios');
+
+        const productMock = [
+            {
+                "id": 1,
+                "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+                "price": 109.95,
+                "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+                "category": "men's clothing",
+                "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+                "rating": {
+                    "rate": 3.9,
+                    "count": 120
+                }
+            }
+        ];
+
+        axios.get.mockResolvedValue({
+            data: productMock,
+        })
+
+        render(<MemoryRouter> <ProductList /></MemoryRouter >);
+        await screen.findByRole('button', { name: /add one/i })
+        const subtractButton = screen.getByRole('button', { name: /add one/i });
+        expect(subtractButton).toBeInTheDocument();
+    })
+
+    it("renders image", async () => {
+        vi.mock('axios');
+
+        const productMock = [
+            {
+                "id": 1,
+                "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+                "price": 109.95,
+                "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+                "category": "men's clothing",
+                "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+                "rating": {
+                    "rate": 3.9,
+                    "count": 120
+                }
+            }
+        ];
+
+        axios.get.mockResolvedValue({
+            data: productMock,
+        })
+
+        render(<MemoryRouter> <ProductList /></MemoryRouter >);
+        await screen.findByRole('img');
+        expect(screen.getByRole('img')).toBeInTheDocument();
+    })
+
+    it("renders product name", async () => {
+        vi.mock('axios');
+
+        const productMock = [
+            {
+                "id": 1,
+                "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+                "price": 109.95,
+                "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+                "category": "men's clothing",
+                "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+                "rating": {
+                    "rate": 3.9,
+                    "count": 120
+                }
+            }
+        ];
+
+        axios.get.mockResolvedValue({
+            data: productMock,
+        })
+
+        render(<MemoryRouter> <ProductList /></MemoryRouter >);
+        await screen.findByRole('heading', { level: 2 });
+        expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
+    })
+
+    it("renders price", async () => {
+        vi.mock('axios');
+
+        const productMock = [
+            {
+                "id": 1,
+                "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+                "price": 109.95,
+                "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+                "category": "men's clothing",
+                "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+                "rating": {
+                    "rate": 3.9,
+                    "count": 120
+                }
+            }
+        ];
+
+        axios.get.mockResolvedValue({
+            data: productMock,
+        })
+
+        render(<MemoryRouter> <ProductList /></MemoryRouter >);
+        await screen.findByText('$109.95');
+        expect(screen.getByText('$109.95')).toBeInTheDocument();
     })
 })

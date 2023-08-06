@@ -2,10 +2,10 @@
 
 exports[`Navbar component > will create a snapshot 1`] = `
 <nav
-  className="_navigation_39d119"
+  className="navigation"
 >
   <button
-    className="_hamburger_39d119"
+    className="hamburger"
     onClick={[Function]}
   >
     <svg
@@ -22,7 +22,8 @@ exports[`Navbar component > will create a snapshot 1`] = `
     </svg>
   </button>
   <div
-    className="_navigationMenu_39d119 "
+    className="navigationMenu "
+    data-testid="nav"
   >
     <ul>
       <li>

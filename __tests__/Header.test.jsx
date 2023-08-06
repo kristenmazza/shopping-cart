@@ -1,6 +1,5 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import Header from "../src/components/Header";
 import { describe, it, expect } from 'vitest';
 import { MemoryRouter, BrowserRouter } from "react-router-dom";
@@ -10,7 +9,7 @@ import axios from "axios";
 import { GlobalContext } from "../src/App";
 
 describe("Header component", () => {
-    it("renders correct heading", () => {
+    it("renders correct title", () => {
         render(<MemoryRouter><Header /></MemoryRouter>);
         expect(screen.getByRole("heading").textContent).toMatch(/lumina/i);
     });
@@ -78,11 +77,5 @@ describe('Cart in header', () => {
 
         const cartBtn = screen.getByRole('button', { name: /cart/i });
         expect(cartBtn.children.item(1).textContent).toBe('0');
-
-        // const user = userEvent.setup()
-        // await screen.findByRole('button', { name: /add to cart/i })
-        // const button = screen.getByRole('button', { name: /add to cart/i });
-        // user.click(button);
-        // expect(cartBtn.children.item(1).textContent).toBe('1');
     })
 })

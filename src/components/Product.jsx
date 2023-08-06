@@ -86,11 +86,11 @@ function Product({ items, title, price, image, quantity, id, setItems }) {
             </div >
             <div className={styles.row}>
                 <div className={styles.counter}>
-                    <button type="button" id="sub" className={styles.sub} onClick={() => handleQuantityDecrease()}>-</button>
+                    <button type="button" id="sub" aria-label="Add one" className={styles.sub} onClick={() => handleQuantityDecrease()}>-</button>
                     <input type="text" id="1" min="0" value={quantity || "1"} onChange={(e) => handleQuantityInputChange(e)} className={styles.field} />
-                    <button type="button" id="add" className={styles.add} onClick={() => handleQuantityIncrease()}>+</button>
+                    <button type="button" id="add" aria-label="Subtract one" className={styles.add} onClick={() => handleQuantityIncrease()}>+</button>
                 </div >
-                <button className={styles.addCartButton} area-label="add to cart" onClick={() => handleAddToCart()}>Add to Cart</button>
+                <button className={styles.addCartButton} area-label="Add to cart" onClick={() => handleAddToCart()}>Add to Cart</button>
             </div>
         </div >
     )

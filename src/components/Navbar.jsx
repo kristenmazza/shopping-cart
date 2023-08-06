@@ -23,7 +23,7 @@ function Navbar() {
                     />
                 </svg>
             </button>
-            <div className={`${styles.navigationMenu} ${expandedClassOption}`}>
+            <div className={`${styles.navigationMenu} ${expandedClassOption}`} data-testid="nav">
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/shop">Shop</Link></li>

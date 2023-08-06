@@ -31,7 +31,7 @@ export default function ShoppingCart() {
 
         return (
             <main className={styles.cartContainer}>
-                <div className={styles.heading}><h2>Your Cart</h2></div>
+                <div className={styles.heading}><h1>Your Cart</h1></div>
                 <div className={styles.cart}>
                     <div className={styles.cartItems}>
                         {cartItems}
@@ -51,7 +51,7 @@ export default function ShoppingCart() {
                             <p className={styles.total}>Estimated Total</p>
                             <p className={styles.total}>${total.toFixed(2)}</p>                        </div>
 
-                        <button className={styles.checkoutButton}>Checkout</button>
+                        <button className={styles.checkoutButton} aria-label="checkout">Checkout</button>
                         <Link to="/shop">CONTINUE SHOPPING</Link>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ export default function ShoppingCart() {
         return (
             <main className={styles.cartContainer}>
                 <div className={styles.emptyCart}>
-                    <h2>Your cart is empty</h2>
+                    <h1>Your cart is empty</h1>
                     <p>Add some items to your cart and let the fun begin.</p>
                     <img className={styles.cartImg} alt="Shopping cart" src="/images/cart.png" />
                     <button className={styles.shopButton} onClick={() => navigate('/shop')}>Start Shopping</button>
