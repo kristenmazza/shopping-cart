@@ -5,10 +5,10 @@
     color: rgb(52, 52, 52);
 }
 
-.heading {
-    font-size: 18px;
+/* .heading {
+    font-size: 14px;
     text-transform: uppercase;
-}
+} */
 
 .cart {
     display: flex;
@@ -34,10 +34,16 @@
     justify-content: center;
 }
 
-.emptyCart>h2 {
+.heading>h1,
+.emptyCart>h1 {
     font-size: 30px;
     margin: 0;
+    padding-bottom: 20px;
     text-transform: uppercase;
+}
+
+.heading>h1 {
+    padding-top: 20px;
 }
 
 .emptyCart>p {
