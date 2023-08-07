@@ -9,7 +9,6 @@ export default function ShoppingCartItem({ cart, setCart, title, price, image, q
         let total = 0;
         updatedCart.forEach(item => {
             total += (item.price * item.quantity);
-            ;
         })
         setTotal(total);
     }
